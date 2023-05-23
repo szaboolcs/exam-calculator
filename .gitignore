@@ -1,0 +1,9 @@
+/.idea
+/.project
+/.sonar
+/.buildpath
+/nbproject
+/vendor
+composer.lock
+/_ide_helper.php
+/test-reports
