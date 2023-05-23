@@ -19,4 +19,14 @@ abstract class ValueObjectAbstract implements ValueObjectInterface
     {
         return $this->value;
     }
+
+    /**
+     * @return string
+     */
+    protected static function getClassName(): string
+    {
+        $classParts = explode('\\', static::class);
+
+        return end($classParts);
+    }
 }
