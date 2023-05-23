@@ -27,7 +27,8 @@
 
   "autoload": {
     "psr-4": {
-      "School\\LeavingExamEvaluator\\": "src/LeavingExamEvaluator"
+      "School\\LeavingExamEvaluator\\": "src/LeavingExamEvaluator",
+      "School\\Scalar\\": "src/Scalar"
     }
   },
 
