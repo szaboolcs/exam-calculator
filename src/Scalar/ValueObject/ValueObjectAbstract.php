@@ -9,7 +9,7 @@ abstract class ValueObjectAbstract implements ValueObjectInterface
     /**
      * @param mixed $value
      */
-    public function __construct(private readonly mixed $value)
+    public function __construct(protected readonly mixed $value)
     {}
 
     /**
