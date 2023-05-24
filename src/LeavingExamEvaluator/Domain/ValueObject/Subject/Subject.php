@@ -33,25 +33,4 @@ class Subject extends Enum
         self::OROSZ,
         self::TORTENELEM,
     ];
-
-    public function __construct(string $name, private readonly Type $type)
-    {
-        parent::__construct($name);
-    }
-
-    /**
-     * @return string
-     */
-    public function getValue(): string
-    {
-        return $this->name;
-    }
-
-    /**
-     * @return Type
-     */
-    public function getType(): Type
-    {
-        return $this->type;
-    }
 }
