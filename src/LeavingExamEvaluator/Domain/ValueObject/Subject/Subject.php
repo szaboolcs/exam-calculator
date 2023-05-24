@@ -6,6 +6,7 @@ use School\Scalar\ValueObject\Enum\Enum;
 
 class Subject extends Enum
 {
+    const MAGYAR_NYELV_ES_IRODALOM ='magyar_nyelv_es_irodalom';
     const MATEMATKA = 'matematika';
     const BIOLOGIA = 'biologia';
     const FIZIKA = 'fizika';
@@ -20,6 +21,7 @@ class Subject extends Enum
     const TORTENELEM = 'tortenelem';
 
     protected static $enabledValues = [
+        self::MAGYAR_NYELV_ES_IRODALOM,
         self::MATEMATKA,
         self::BIOLOGIA,
         self::FIZIKA,
