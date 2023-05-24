@@ -1,9 +1,10 @@
 <?php
 
-namespace School\Scalar\ValueObject\Enum;
+namespace unit\Scalar\ValueObject\Enum;
 
-use School\Scalar\Exception\InvalidEnumValueException;
 use PHPUnit\Framework\TestCase;
+use School\Scalar\Exception\InvalidEnumValueException;
+use School\Scalar\ValueObject\Enum\Enum;
 
 class TestEnumObject extends Enum
 {

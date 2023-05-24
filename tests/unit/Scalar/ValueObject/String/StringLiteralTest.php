@@ -1,9 +1,10 @@
 <?php
 
-namespace School\Scalar\ValueObject\String;
+namespace unit\Scalar\ValueObject\String;
 
 use PHPUnit\Framework\TestCase;
 use School\Scalar\Exception\InvalidStringException;
+use School\Scalar\ValueObject\String\StringLiteral;
 
 class StringLiteralTest extends TestCase
 {

@@ -1,9 +1,10 @@
 <?php
 
-namespace School\Scalar\ValueObject\Numeric;
+namespace unit\Scalar\ValueObject\Numeric;
 
 use PHPUnit\Framework\TestCase;
 use School\Scalar\Exception\IntegerOutOfRangeException;
+use School\Scalar\ValueObject\Numeric\UnsignedInteger;
 
 class UnsignedIntegerTest extends TestCase
 {
