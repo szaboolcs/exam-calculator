@@ -9,11 +9,8 @@ class SubjectTest extends TestCase
 {
     public function testConstruction()
     {
-        $name    = new StringLiteral('name');
-        $type    = new Type(Type::MANDATORY);
-        $subject = new Subject($name, $type);
+        $subject = new Subject(Subject::TORTENELEM);
 
-        $this->assertEquals($name, $subject->getName());
-        $this->assertEquals($type, $subject->getType());
+        $this->assertEquals(Subject::TORTENELEM, $subject->getValue());
     }
 }
