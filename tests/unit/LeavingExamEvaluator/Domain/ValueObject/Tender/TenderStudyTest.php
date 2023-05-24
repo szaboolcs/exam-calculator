@@ -3,16 +3,9 @@
 namespace School\LeavingExamEvaluator\Domain\ValueObject\Tender;
 
 use PHPUnit\Framework\TestCase;
-use School\LeavingExamEvaluator\Domain\Collection\GraduationResultCollection;
-use School\LeavingExamEvaluator\Domain\ValueObject\Subject\Level;
-use School\LeavingExamEvaluator\Domain\ValueObject\Subject\Subject;
-use School\LeavingExamEvaluator\Domain\ValueObject\Tender\GraduationResult;
-use School\LeavingExamEvaluator\Domain\ValueObject\Tender\TenderStudy;
 use School\LeavingExamEvaluator\Domain\ValueObject\University\Faculty;
 use School\LeavingExamEvaluator\Domain\ValueObject\University\Study;
 use School\LeavingExamEvaluator\Domain\ValueObject\University\University;
-use School\Scalar\Exception\InvalidEnumValueException;
-use School\Scalar\ValueObject\Numeric\Percent;
 
 class TenderStudyTest extends TestCase
 {
