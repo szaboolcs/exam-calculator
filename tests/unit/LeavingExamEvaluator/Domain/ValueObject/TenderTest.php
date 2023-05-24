@@ -4,9 +4,12 @@ namespace School\LeavingExamEvaluator\Domain\ValueObject;
 
 use PHPUnit\Framework\TestCase;
 use School\LeavingExamEvaluator\Domain\Collection\GraduationResultCollection;
+use School\LeavingExamEvaluator\Domain\Collection\LanguageExamCollection;
 use School\LeavingExamEvaluator\Domain\ValueObject\Subject\Level;
 use School\LeavingExamEvaluator\Domain\ValueObject\Subject\Subject;
 use School\LeavingExamEvaluator\Domain\ValueObject\Tender\GraduationResult;
+use School\LeavingExamEvaluator\Domain\ValueObject\Tender\LanguageExam\ExamLevel;
+use School\LeavingExamEvaluator\Domain\ValueObject\Tender\LanguageExam\Language;
 use School\LeavingExamEvaluator\Domain\ValueObject\Tender\TenderStudy;
 use School\LeavingExamEvaluator\Domain\ValueObject\University\Faculty;
 use School\LeavingExamEvaluator\Domain\ValueObject\University\Study;
@@ -22,9 +25,11 @@ class TenderTest extends TestCase
         Tender $tender,
         TenderStudy $tenderStudy,
         GraduationResultCollection $graduationResultCollection,
+        LanguageExamCollection $languageExamCollection,
     ) {
         $this->assertSame($tenderStudy, $tender->getTenderStudy());
         $this->assertSame($graduationResultCollection, $tender->getGraduationResultCollection());
+        $this->assertSame($languageExamCollection, $tender->getLanguageExamCollection());
     }
 
     public static function providerForTestConstruction()
@@ -42,13 +47,21 @@ class TenderTest extends TestCase
         $graduationResultCollection = new GraduationResultCollection();
         $graduationResultCollection->add($graduationResult);
 
-        $tender = new Tender($tenderStudy, $graduationResultCollection);
+        $language     = new Language(Language::ANGOL);
+        $examLevel    = new ExamLevel(ExamLevel::B2);
+        $languageExam = new Tender\LanguageExam($language, $examLevel);
+
+        $languageExamCollection = new LanguageExamCollection();
+        $languageExamCollection->add($languageExam);
+
+        $tender = new Tender($tenderStudy, $graduationResultCollection, $languageExamCollection);
 
         return [
             [
                 'tender'                     => $tender,
                 'tenderStudy'                => $tenderStudy,
                 'graduationResultCollection' => $graduationResultCollection,
+                'languageExamCollection'     => $languageExamCollection,
             ]
         ];
     }
