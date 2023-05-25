@@ -2,7 +2,7 @@
   "name": "school/leaving-exam-evaluator",
   "description": "School leaving exam result evaluator package.",
   "license": "proprietary",
-  "type": "library",
+  "type": "appliaction",
   "minimum-stability": "dev",
   "prefer-stable": true,
 
@@ -35,6 +35,6 @@
   "scripts": {
     "code-sniffer": "./vendor/bin/phpcs -p --standard=PSR12 src",
     "phpunit": "./vendor/bin/phpunit -c phpunit.xml",
-    "phpmd": "./vendor/bin/phpmd Api text cleancode,codesize,controversial,design,unusedcode"
+    "phpmd": "./vendor/bin/phpmd src text cleancode,codesize,controversial,design,unusedcode"
   }
 }
