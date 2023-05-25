@@ -2,7 +2,9 @@
 
 namespace School\LeavingExamEvaluator\Application\Service;
 
-use School\LeavingExamEvaluator\Domain\Service\CalculatePointsService;
+use School\LeavingExamEvaluator\Application\Contract\LeavingExamEvaluatorServiceInterface;
+use School\LeavingExamEvaluator\Application\Exception\NotAcceptableTenderException;
+use School\LeavingExamEvaluator\Application\Exception\StudyNotFoundException;
 use School\LeavingExamEvaluator\Domain\Service\GetBaseScoreService;
 use School\LeavingExamEvaluator\Domain\Service\GetBestOptionalGraduationResultService;
 use School\LeavingExamEvaluator\Domain\Service\GetExtraScoreService;
@@ -14,10 +16,21 @@ use School\LeavingExamEvaluator\Domain\ValueObject\Tender;
 use School\LeavingExamEvaluator\Infrastructure\Persistence\DataMapper\StudyMapper;
 use School\LeavingExamEvaluator\Infrastructure\Persistence\Factory\StudyFactory;
 use School\LeavingExamEvaluator\Infrastructure\Persistence\Repository\StudyRepository;
+use School\Scalar\Exception\IntegerOutOfRangeException;
+use School\Scalar\ValueObject\Numeric\UnsignedInteger;
 
-class LeavingExamEvaluatorService
+class LeavingExamEvaluatorService implements LeavingExamEvaluatorServiceInterface
 {
-    public function calculatePoints(Tender $tender)
+    /**
+     * @param Tender $tender
+     *
+     * @return UnsignedInteger
+     *
+     * @throws NotAcceptableTenderException
+     * @throws StudyNotFoundException
+     * @throws IntegerOutOfRangeException
+     */
+    public function getScore(Tender $tender): UnsignedInteger
     {
         $dataMapper              = $this->getDataMapper();
         $getStudyByTenderService = new GetStudyByTenderService($dataMapper);
@@ -42,11 +55,13 @@ class LeavingExamEvaluatorService
         return $getScoreService->get($tender, $study);
     }
 
-    private function getDataMapper()
+    /**
+     * @return StudyMapper
+     */
+    private function getDataMapper(): StudyMapper
     {
         $studyRepository = new StudyRepository();
-        $studyFactory = new StudyFactory();
-
+        $studyFactory    = new StudyFactory();
 
         return new StudyMapper($studyRepository, $studyFactory);
     }
