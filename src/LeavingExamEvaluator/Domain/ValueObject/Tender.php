@@ -17,7 +17,8 @@ class Tender
         private readonly TenderStudy $tenderStudy,
         private readonly GraduationResultCollection $graduationResultCollection,
         private readonly LanguageExamCollection $languageExamCollection
-    ) { }
+    ) {
+    }
 
     /**
      * @return TenderStudy

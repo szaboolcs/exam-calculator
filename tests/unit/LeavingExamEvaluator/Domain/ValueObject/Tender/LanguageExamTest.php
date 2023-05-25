@@ -1,6 +1,6 @@
 <?php
 
-namespace LeavingExamEvaluator\Domain\ValueObject;
+namespace School\LeavingExamEvaluator\Domain\ValueObject\Tender;
 
 use PHPUnit\Framework\TestCase;
 use School\LeavingExamEvaluator\Domain\ValueObject\Tender\LanguageExam;

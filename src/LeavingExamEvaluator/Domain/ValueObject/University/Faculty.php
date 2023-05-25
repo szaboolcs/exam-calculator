@@ -6,9 +6,15 @@ use School\Scalar\ValueObject\Enum\Enum;
 
 class Faculty extends Enum
 {
-    const IK = 'IK';
+    /**
+     * @var string
+     */
+    public const IK = 'IK';
 
-    const BTK = 'BTK';
+    /**
+     * @var string
+     */
+    public const BTK = 'BTK';
 
     /**
      * @var string[]

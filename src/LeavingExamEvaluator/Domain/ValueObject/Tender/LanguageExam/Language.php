@@ -6,13 +6,39 @@ use School\Scalar\ValueObject\Enum\Enum;
 
 class Language extends Enum
 {
-    const ANGOL = 'angol';
-    const FRANCIA = 'francia';
-    const NEMET = 'nemet';
-    const OLASZ = 'olasz';
-    const SPANYOL = 'spanyol';
-    const OROSZ = 'orosz';
+    /**
+     * @var string
+     */
+    public const ANGOL = 'angol';
 
+    /**
+     * @var string
+     */
+    public const FRANCIA = 'francia';
+
+    /**
+     * @var string
+     */
+    public const NEMET = 'nemet';
+
+    /**
+     * @var string
+     */
+    public const OLASZ = 'olasz';
+
+    /**
+     * @var string
+     */
+    public const SPANYOL = 'spanyol';
+
+    /**
+     * @var string
+     */
+    public const OROSZ = 'orosz';
+
+    /**
+     * @var string[]
+     */
     protected static $enabledValues = [
         self::ANGOL,
         self::FRANCIA,

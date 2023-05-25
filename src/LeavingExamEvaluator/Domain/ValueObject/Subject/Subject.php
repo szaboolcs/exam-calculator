@@ -2,24 +2,15 @@
 
 namespace School\LeavingExamEvaluator\Domain\ValueObject\Subject;
 
+use School\LeavingExamEvaluator\Domain\ValueObject\Subject\Contract\SubjectHumanInterface;
+use School\LeavingExamEvaluator\Domain\ValueObject\Subject\Contract\SubjectRealInterface;
 use School\Scalar\ValueObject\Enum\Enum;
 
-class Subject extends Enum
+class Subject extends Enum implements SubjectHumanInterface, SubjectRealInterface
 {
-    const MAGYAR_NYELV_ES_IRODALOM ='magyar_nyelv_es_irodalom';
-    const MATEMATKA = 'matematika';
-    const BIOLOGIA = 'biologia';
-    const FIZIKA = 'fizika';
-    const INFORMATIKA = 'informatika';
-    const KEMIA = 'kemia';
-    const ANGOL = 'angol';
-    const FRANCIA = 'francia';
-    const NEMET = 'nemet';
-    const OLASZ = 'olasz';
-    const SPANYOL = 'spanyol';
-    const OROSZ = 'orosz';
-    const TORTENELEM = 'tortenelem';
-
+    /**
+     * @var string[]
+     */
     protected static $enabledValues = [
         self::MAGYAR_NYELV_ES_IRODALOM,
         self::MATEMATKA,
@@ -35,4 +26,51 @@ class Subject extends Enum
         self::OROSZ,
         self::TORTENELEM,
     ];
+
+    /**
+     * @return string
+     */
+    public function getHumanReadableName(): string
+    {
+        switch ($this->value) {
+            case self::MAGYAR_NYELV_ES_IRODALOM:
+                return 'Magyar nyelv és irodalom.';
+
+            case self::MATEMATKA:
+                return 'Matematika';
+
+            case self::BIOLOGIA:
+                return 'Biológia';
+
+            case self::FIZIKA:
+                return 'Fizika';
+
+            case self::INFORMATIKA:
+                return 'Informatika';
+
+            case self::KEMIA:
+                return 'Kémia';
+
+            case self::ANGOL:
+                return 'Angol';
+
+            case self::FRANCIA:
+                return 'Francia';
+
+            case self::NEMET:
+                return 'Német';
+
+            case self::OLASZ:
+                return 'Olasz';
+
+            case self::SPANYOL:
+                return 'Spanyol';
+
+            case self::OROSZ:
+                return 'Orosz';
+
+            case self::TORTENELEM:
+                return 'Történelem';
+        }
+    }
 }

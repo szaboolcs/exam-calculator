@@ -9,13 +9,16 @@ class Level extends Enum
     /**
      * @var string
      */
-    const ADVANCED = 'advanced';
+    public const ADVANCED = 'advanced';
 
     /**
      * @var string
      */
-    const INTERMEDIATE = 'intermediate';
+    public const INTERMEDIATE = 'intermediate';
 
+    /**
+     * @var string[]
+     */
     protected static $enabledValues = [
         self::ADVANCED,
         self::INTERMEDIATE,

@@ -6,9 +6,15 @@ use School\Scalar\ValueObject\Enum\Enum;
 
 class University extends Enum
 {
-    const ELTE = 'elte';
+    /**
+     * @var string
+     */
+    public const ELTE = 'elte';
 
-    const PPKE = 'ppke';
+    /**
+     * @var string
+     */
+    public const PPKE = 'ppke';
 
     /**
      * @var string[]

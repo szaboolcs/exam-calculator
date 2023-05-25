@@ -9,13 +9,16 @@ class Type extends Enum
     /**
      * @var string
      */
-    const MANDATORY = 'mandatory';
+    public const MANDATORY = 'mandatory';
 
     /**
      * @var string
      */
-    const OPTIONAL = 'optional';
+    public const OPTIONAL = 'optional';
 
+    /**
+     * @var string[]
+     */
     protected static $enabledValues = [
         self::MANDATORY,
         self::OPTIONAL,
